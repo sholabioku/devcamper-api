@@ -14,6 +14,8 @@ const bootcamps = require('./routes/bootcamps');
 
 const app = express();
 
+app.use(express.json());
+
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
@@ -31,6 +33,6 @@ const server = app.listen(
 
 // Handle unhandle promise rejection;
 process.on('unhandledRejection', (err, promise) => {
-  console.log(`Error: ${err.message}`);
+  console.log(`Error: ${err.message}`.red);
   server.close(() => process.exit(1));
 });
