@@ -121,7 +121,7 @@ BootcampSchema.pre('save', async function geocode(next) {
   };
 
   // Do not save address in DB
-  this.address = null;
+  this.address = undefined;
   next();
 });
 
