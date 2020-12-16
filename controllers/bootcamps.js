@@ -8,7 +8,12 @@ const geocoder = require('../utils/geocoder');
 // @route GET /api/v1/bootcamps
 // @access Public
 exports.getBootcamps = asyncHandler(async (req, res, next) => {
-  const bootcamps = await Bootcamp.find();
+  // Convert query object to string
+  let queryStr = JSON.stringify(req.query);
+  queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/, (match) => `$${match}`);
+
+  const query = JSON.parse(queryStr);
+  const bootcamps = await Bootcamp.find(query);
   res
     .status(200)
     .json({ success: true, count: bootcamps.length, data: bootcamps });
@@ -93,7 +98,7 @@ exports.getBootcampsInRadius = asyncHandler(async (req, res, next) => {
 
   // Calculate radius using radians
   // Divide distance by radius of earth
-  // Earth Radius = 3,963 miles / 6, 378 km
+  // Earth Radius = 3,963 miles / 6,378 km
   const radius = distance / 3963;
 
   const bootcamps = await Bootcamp.find({
