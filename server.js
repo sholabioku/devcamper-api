@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
@@ -24,6 +25,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.use(fileupload());
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/v1/bootcamps', bootcamps);
 app.use('/api/v1/courses', courses);
