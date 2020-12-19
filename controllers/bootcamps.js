@@ -1,3 +1,4 @@
+const path = require('path');
 const Bootcamp = require('../models/Bootcamp');
 
 const asyncHandler = require('../middleware/async');
@@ -205,4 +206,8 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
       )
     );
   }
+
+  // Create custom filename
+  file.name = `photo_${bootcamp._id}${path.parse(file.name).ext}`;
+  console.log(file.name);
 });
