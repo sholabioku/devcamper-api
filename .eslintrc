@@ -17,6 +17,7 @@
     "no-useless-escape": 1,
     "consistent-return": 1,
     "no-underscore-dangle": 1,
-    "func-names": 0
+    "func-names": 0,
+    "no-shadow": 1
   }
 }
