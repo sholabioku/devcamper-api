@@ -19,6 +19,7 @@
     "no-underscore-dangle": 1,
     "func-names": 0,
     "no-shadow": 1,
-    "no-return-await": 1
+    "no-return-await": 1,
+    "no-use-before-define": 1
   }
 }
