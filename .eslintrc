@@ -20,6 +20,7 @@
     "func-names": 0,
     "no-shadow": 1,
     "no-return-await": 1,
-    "no-use-before-define": 1
+    "no-use-before-define": 1,
+    "prefer-destructuring": 1
   }
 }
