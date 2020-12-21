@@ -21,7 +21,6 @@ const sendEmail = async (options) => {
   const info = await transporter.sendMail(message);
 
   console.log('Message sent: %s,', info.messageId);
-  console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 };
 
 module.exports = sendEmail;
