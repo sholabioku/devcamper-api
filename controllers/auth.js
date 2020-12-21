@@ -55,7 +55,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
   }
 
   // Get reset token
-  const resetToken = user.getResetPasswordToken();
+  user.getResetPasswordToken();
 
   await user.save({ validateBeforeSave: false });
 
