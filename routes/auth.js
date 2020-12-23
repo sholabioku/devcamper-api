@@ -18,6 +18,6 @@ router.post('/login', login);
 router.get('/me', protect, getMe);
 router.post('/forgotpassword', forgotPassword);
 router.put('/resetpassword/:resettoken', resetPassword);
-router.put('/updatedetails', updateDetails);
+router.put('/updatedetails', protect, updateDetails);
 
 module.exports = router;
