@@ -8,6 +8,8 @@ const cookieParser = require('cookie-parser');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
 const xss = require('xss-clean');
+const rateLimit = require('express-rate-limit');
+const hpp = require('hpp');
 
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
@@ -36,6 +38,13 @@ app.use(fileupload());
 app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100,
+});
+
+app.use(apiLimiter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
