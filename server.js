@@ -38,6 +38,7 @@ app.use(fileupload());
 app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
+app.use(hpp());
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
