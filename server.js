@@ -10,6 +10,7 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
+const cors = require('cors');
 
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
@@ -39,6 +40,7 @@ app.use(mongoSanitize());
 app.use(helmet());
 app.use(xss());
 app.use(hpp());
+app.use(cors());
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
