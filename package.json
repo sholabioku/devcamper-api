@@ -9,6 +9,9 @@
     "start": "NODE_ENV=production node server",
     "dev": "nodemon server"
   },
+  "engines": {
+    "node": "14.4.0"
+  },
   "author": "Lukman Bioku",
   "license": "MIT",
   "dependencies": {
