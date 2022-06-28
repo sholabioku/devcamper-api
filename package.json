@@ -7,7 +7,9 @@
     "lint": "eslint . --ext .js",
     "format": "prettier-eslint --eslint-config-path ./.eslintrc --write '**/*.js'",
     "start": "NODE_ENV=production node backend/server",
-    "dev": "nodemon backend/server"
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "engines": {
     "node": "14.4.0"
@@ -17,6 +19,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
+    "concurrently": "^7.2.2",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "docgen": "0.0.1",
