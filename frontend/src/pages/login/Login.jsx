@@ -1,55 +1,54 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './login.css';
 
 const Login = () => {
   return (
-    <div className="login-show">
+    <div className="login-show bg-light">
       <Container>
         <Row>
           <Col md={6} className="m-auto">
             <Card className="bg-white p-4 mb-4">
               <Card.Body>
                 <h1>
-                  <i class="fas fa-sign-in-alt"></i> Login
+                  <i className="fas fa-sign-in-alt"></i> Login
                 </h1>
                 <p>
                   Log in to list your bootcamp or rate, review and favorite
                   bootcamps
                 </p>
-                <form>
-                  <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input
+                <Form>
+                  <Form.Group className="mb-3" controlId="email">
+                    <Form.Label>Email Address</Form.Label>
+                    <Form.Control
                       type="email"
                       name="email"
-                      class="form-control"
                       placeholder="Enter email"
                       required
                     />
-                  </div>
-                  <div class="form-group mb-4">
-                    <label for="password">Password</label>
-                    <input
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="password">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
                       type="password"
                       name="password"
-                      class="form-control"
                       placeholder="Enter password"
                       required
                     />
-                  </div>
-                  <div class="form-group">
-                    <input
+                  </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Control
                       type="submit"
                       value="Login"
-                      class="btn btn-primary btn-block"
+                      className="btn btn-primary btn-block"
                     />
-                  </div>
-                </form>
+                  </Form.Group>
+                </Form>
                 <p>
-                  Forgot Password?
-                  <a href="reset-password.html">Reset Password</a>
+                  Forgot Password?{' '}
+                  <Link to="/reset-password">Reset Password</Link>
                 </p>
               </Card.Body>
             </Card>
