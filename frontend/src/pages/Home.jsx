@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="showcase">
       <div className="dark-overlay">
-        <div className="showcase-inner">
+        <div className="showcase-content">
           <Container>
             <h1 className="display-4">Find a Code Bootcamp</h1>
             <p className="lead">
