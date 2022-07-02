@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Form, Row, Col } from 'react-bootstrap';
 
+import './home.css';
+
 const Home = () => {
   return (
     <div className="showcase">
