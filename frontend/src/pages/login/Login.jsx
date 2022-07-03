@@ -6,7 +6,7 @@ import './login.css';
 
 const Login = () => {
   return (
-    <div className="login-show bg-light">
+    <div>
       <Container>
         <Row>
           <Col md={6} className="m-auto">
