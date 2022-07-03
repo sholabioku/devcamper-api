@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './register.css';
 
 const Register = () => {
@@ -85,6 +86,9 @@ const Register = () => {
                     />
                   </Form.Group>
                 </Form>
+                <p className="mb-3">
+                  Already have an account? <Link to={`/login`}>Sign-In</Link>
+                </p>
               </Card.Body>
             </Card>
           </Col>
