@@ -6,11 +6,11 @@ import './login.css';
 
 const Login = () => {
   return (
-    <div>
+    <div className="login-show">
       <Container>
         <Row>
           <Col md={6} className="m-auto">
-            <Card className="bg-white p-4 mb-4">
+            <Card className="p-4 mb-4">
               <Card.Body>
                 <h1>
                   <i className="fas fa-sign-in-alt"></i> Login
