@@ -104,7 +104,7 @@ const Bootcamps = () => {
                 <Col md={8}>
                   <Card.Body>
                     <Card.Title>
-                      <Link to="/bootcamp">
+                      <Link style={{ textDecoration: 'none' }} to="/bootcamp">
                         Devworks Bootcamp
                         <Badge bg="success" className="float-end">
                           8.8
@@ -129,7 +129,7 @@ const Bootcamps = () => {
                 <Col md={8}>
                   <Card.Body>
                     <Card.Title>
-                      <Link to="/bootcamp">
+                      <Link style={{ textDecoration: 'none' }} to="/bootcamp">
                         ModernTech Bootcamp
                         <Badge bg="success" className="float-end">
                           7.5
@@ -154,7 +154,7 @@ const Bootcamps = () => {
                 <Col md={8}>
                   <Card.Body>
                     <Card.Title>
-                      <Link to="/bootcamp">
+                      <Link style={{ textDecoration: 'none' }} to="/bootcamp">
                         Codemasters
                         <Badge bg="success" className="float-end">
                           9.2
@@ -179,7 +179,7 @@ const Bootcamps = () => {
                 <Col md={8}>
                   <Card.Body>
                     <Card.Title>
-                      <Link to="/bootcamp">
+                      <Link style={{ textDecoration: 'none' }} to="/bootcamp">
                         DevCentral Bootcamp
                         <Badge bg="success" className="float-end">
                           6.4

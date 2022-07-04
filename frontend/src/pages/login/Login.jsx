@@ -48,11 +48,15 @@ const Login = () => {
                 </Form>
                 <p>
                   Forgot Password?{' '}
-                  <Link to="/reset-password">Reset Password</Link>
+                  <Link style={{ textDecoration: 'none' }} to="/reset-password">
+                    Reset Password
+                  </Link>
                 </p>
                 <p className="mb-3">
                   New Customer?{' '}
-                  <Link to={`/register`}>Create your account</Link>
+                  <Link style={{ textDecoration: 'none' }} to={`/register`}>
+                    Create your account
+                  </Link>
                 </p>
               </Card.Body>
             </Card>

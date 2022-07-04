@@ -87,7 +87,10 @@ const Register = () => {
                   </Form.Group>
                 </Form>
                 <p className="mb-3">
-                  Already have an account? <Link to={`/login`}>Sign-In</Link>
+                  Already have an account?{' '}
+                  <Link style={{ textDecoration: 'none' }} to={`/login`}>
+                    Sign-In
+                  </Link>
                 </p>
               </Card.Body>
             </Card>
