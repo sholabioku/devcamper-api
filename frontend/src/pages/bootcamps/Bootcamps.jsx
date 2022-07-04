@@ -1,5 +1,10 @@
 import React from 'react';
-import { Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Badge, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import image_1 from '../../assets/img/image_1.jpg';
+import image_2 from '../../assets/img/image_2.jpg';
+import image_3 from '../../assets/img/image_3.jpg';
+import image_4 from '../../assets/img/image_4.jpg';
 import './bootcamps.css';
 
 const Bootcamps = () => {
@@ -7,6 +12,7 @@ const Bootcamps = () => {
     <div className="bootcamps-show">
       <Container>
         <Row>
+          {/* Side Col */}
           <Col md={4}>
             <Card className="mb-4">
               <Card.Body>
@@ -86,6 +92,110 @@ const Bootcamps = () => {
                 />
               </Form.Group>
             </Form>
+          </Col>
+          {/* Main Col */}
+          <Col md={8}>
+            {/* Bootcamps */}
+            <Card className="mb-3">
+              <Row className="no-gutters">
+                <Col md={4}>
+                  <img src={image_1} className="card-img" alt="..." />
+                </Col>
+                <Col md={8}>
+                  <Card.Body>
+                    <Card.Title>
+                      <Link to="/bootcamp">
+                        Devworks Bootcamp
+                        <Badge bg="success" className="float-end">
+                          8.8
+                        </Badge>
+                      </Link>
+                    </Card.Title>
+                    <Badge className="mb-2" bg="dark">
+                      Boston, MA
+                    </Badge>
+                    <Card.Text>
+                      Web Development, UI/UX, Mobile Development
+                    </Card.Text>
+                  </Card.Body>
+                </Col>
+              </Row>
+            </Card>
+            <Card className="mb-3">
+              <Row className="no-gutters">
+                <Col md={4}>
+                  <img src={image_2} className="card-img" alt="..." />
+                </Col>
+                <Col md={8}>
+                  <Card.Body>
+                    <Card.Title>
+                      <Link to="/bootcamp">
+                        ModernTech Bootcamp
+                        <Badge bg="success" className="float-end">
+                          7.5
+                        </Badge>
+                      </Link>
+                    </Card.Title>
+                    <Badge className="mb-2" bg="dark">
+                      Boston, MA
+                    </Badge>
+                    <Card.Text>
+                      Web Development, UI/UX, Mobile Development
+                    </Card.Text>
+                  </Card.Body>
+                </Col>
+              </Row>
+            </Card>
+            <Card className="mb-3">
+              <Row className="no-gutters">
+                <Col md={4}>
+                  <img src={image_3} className="card-img" alt="..." />
+                </Col>
+                <Col md={8}>
+                  <Card.Body>
+                    <Card.Title>
+                      <Link to="/bootcamp">
+                        Codemasters
+                        <Badge bg="success" className="float-end">
+                          9.2
+                        </Badge>
+                      </Link>
+                    </Card.Title>
+                    <Badge className="mb-2" bg="dark">
+                      Burlington, VT
+                    </Badge>
+                    <Card.Text>
+                      Web Development, Data Science, Marketing
+                    </Card.Text>
+                  </Card.Body>
+                </Col>
+              </Row>
+            </Card>
+            <Card className="mb-3">
+              <Row className="no-gutters">
+                <Col md={4}>
+                  <img src={image_4} className="card-img" alt="..." />
+                </Col>
+                <Col md={8}>
+                  <Card.Body>
+                    <Card.Title>
+                      <Link to="/bootcamp">
+                        DevCentral Bootcamp
+                        <Badge bg="success" className="float-end">
+                          6.4
+                        </Badge>
+                      </Link>
+                    </Card.Title>
+                    <Badge className="mb-2" bg="dark">
+                      Kingston, RI
+                    </Badge>
+                    <Card.Text>
+                      Web Development, UI/UX, Mobile Development, Marketing
+                    </Card.Text>
+                  </Card.Body>
+                </Col>
+              </Row>
+            </Card>
           </Col>
         </Row>
       </Container>
