@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Card, Col, Container, Form, Pagination, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './register.css';
 
@@ -12,7 +12,7 @@ const Register = () => {
             <Card className="p-4 mb-4">
               <Card.Body>
                 <h1>
-                  <i class="fas fa-user-plus"></i> Register
+                  <i className="fas fa-user-plus"></i> Register
                 </h1>
                 <p>
                   Register to list your bootcamp or rate, review and favorite

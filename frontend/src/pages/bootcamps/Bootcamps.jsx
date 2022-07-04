@@ -1,5 +1,13 @@
 import React from 'react';
-import { Badge, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import {
+  Badge,
+  Card,
+  Col,
+  Container,
+  Form,
+  Pagination,
+  Row,
+} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import image_1 from '../../assets/img/image_1.jpg';
 import image_2 from '../../assets/img/image_2.jpg';
@@ -71,7 +79,7 @@ const Bootcamps = () => {
               {/* Budget */}
               <Form.Group className="mb-3">
                 <Form.Label> Budget</Form.Label>
-                <Form.Select class="mb-2">
+                <Form.Select className="mb-2">
                   <option value="any" selected>
                     Any
                   </option>
@@ -196,6 +204,18 @@ const Bootcamps = () => {
                 </Col>
               </Row>
             </Card>
+            {/* Pagination */}
+            <div style={{ display: 'block', width: 700, padding: 30 }}>
+              <Pagination>
+                <Pagination.Prev />
+                <Pagination.Ellipsis />
+                <Pagination.Item>{3}</Pagination.Item>
+                <Pagination.Item>{4}</Pagination.Item>
+                <Pagination.Item>{5}</Pagination.Item>
+                <Pagination.Ellipsis />
+                <Pagination.Next />
+              </Pagination>
+            </div>
           </Col>
         </Row>
       </Container>
