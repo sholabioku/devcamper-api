@@ -5,6 +5,7 @@ import {
   Col,
   Container,
   Form,
+  Nav,
   Pagination,
   Row,
 } from 'react-bootstrap';
@@ -204,35 +205,26 @@ const Bootcamps = () => {
                 </Col>
               </Row>
             </Card>
-            <nav aria-label="Page navigation example">
-              <ul className="pagination">
-                <li className="page-item">
-                  <Link className="page-link" to="#">
-                    Previous
-                  </Link>
-                </li>
-                <li className="page-item">
-                  <Link className="page-link" to="#">
-                    1
-                  </Link>
-                </li>
-                <li className="page-item">
-                  <Link className="page-link" to="#">
-                    2
-                  </Link>
-                </li>
-                <li className="page-item">
-                  <Link className="page-link" to="#">
-                    3
-                  </Link>
-                </li>
-                <li className="page-item">
-                  <Link className="page-link" to="#">
-                    Next
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+            <Nav
+              aria-label="Page navigation example"
+              className="pagination mb-3"
+            >
+              <Nav.Item className="page-item">
+                <Nav.Link className="page-link">Previous</Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="page-item">
+                <Nav.Link className="page-link">1</Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="page-item">
+                <Nav.Link className="page-link">2</Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="page-item">
+                <Nav.Link className="page-link">3</Nav.Link>
+              </Nav.Item>
+              <Nav.Item className="page-item">
+                <Nav.Link className="page-link">Next</Nav.Link>
+              </Nav.Item>
+            </Nav>
           </Col>
         </Row>
       </Container>
