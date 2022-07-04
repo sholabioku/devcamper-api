@@ -204,18 +204,35 @@ const Bootcamps = () => {
                 </Col>
               </Row>
             </Card>
-            {/* Pagination */}
-            <div style={{ display: 'block', width: 700, padding: 30 }}>
-              <Pagination>
-                <Pagination.Prev />
-                <Pagination.Ellipsis />
-                <Pagination.Item>{3}</Pagination.Item>
-                <Pagination.Item>{4}</Pagination.Item>
-                <Pagination.Item>{5}</Pagination.Item>
-                <Pagination.Ellipsis />
-                <Pagination.Next />
-              </Pagination>
-            </div>
+            <nav aria-label="Page navigation example">
+              <ul className="pagination">
+                <li className="page-item">
+                  <Link className="page-link" to="#">
+                    Previous
+                  </Link>
+                </li>
+                <li className="page-item">
+                  <Link className="page-link" to="#">
+                    1
+                  </Link>
+                </li>
+                <li className="page-item">
+                  <Link className="page-link" to="#">
+                    2
+                  </Link>
+                </li>
+                <li className="page-item">
+                  <Link className="page-link" to="#">
+                    3
+                  </Link>
+                </li>
+                <li className="page-item">
+                  <Link className="page-link" to="#">
+                    Next
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </Col>
         </Row>
       </Container>
