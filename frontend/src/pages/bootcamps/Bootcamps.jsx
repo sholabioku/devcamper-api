@@ -61,6 +61,30 @@ const Bootcamps = () => {
                   <option value="2">2+</option>
                 </Form.Select>
               </Form.Group>
+
+              {/* Budget */}
+              <Form.Group className="mb-3">
+                <Form.Label> Budget</Form.Label>
+                <Form.Select class="mb-2">
+                  <option value="any" selected>
+                    Any
+                  </option>
+                  <option value="20000">$20,000</option>
+                  <option value="15000">$15,000</option>
+                  <option value="10000">$10,000</option>
+                  <option value="8000">$8,000</option>
+                  <option value="6000">$6,000</option>
+                  <option value="4000">$4,000</option>
+                  <option value="2000">$2,000</option>
+                </Form.Select>
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Control
+                  type="submit"
+                  value="Find Bootcamps"
+                  className="btn btn-primary btn-block"
+                />
+              </Form.Group>
             </Form>
           </Col>
         </Row>
