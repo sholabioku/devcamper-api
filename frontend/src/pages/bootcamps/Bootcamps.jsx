@@ -1,10 +1,7 @@
 import React from 'react';
 import { Badge, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import image_1 from '../../assets/img/image_1.jpg';
-import image_2 from '../../assets/img/image_2.jpg';
-import image_3 from '../../assets/img/image_3.jpg';
-import image_4 from '../../assets/img/image_4.jpg';
+
 import Pagination from '../../components/Pagination';
 import './bootcamps.css';
 
@@ -100,7 +97,11 @@ const Bootcamps = () => {
             <Card className="mb-3">
               <Row className="no-gutters">
                 <Col md={4}>
-                  <img src={image_1} className="card-img" alt="..." />
+                  <img
+                    src="/images/image_1.jpg"
+                    className="card-img"
+                    alt="..."
+                  />
                 </Col>
                 <Col md={8}>
                   <Card.Body>
@@ -125,7 +126,11 @@ const Bootcamps = () => {
             <Card className="mb-3">
               <Row className="no-gutters">
                 <Col md={4}>
-                  <img src={image_2} className="card-img" alt="..." />
+                  <img
+                    src="/images/image_2.jpg"
+                    className="card-img"
+                    alt="..."
+                  />
                 </Col>
                 <Col md={8}>
                   <Card.Body>
@@ -150,7 +155,11 @@ const Bootcamps = () => {
             <Card className="mb-3">
               <Row className="no-gutters">
                 <Col md={4}>
-                  <img src={image_3} className="card-img" alt="..." />
+                  <img
+                    src="/images/image_3.jpg"
+                    className="card-img"
+                    alt="..."
+                  />
                 </Col>
                 <Col md={8}>
                   <Card.Body>
@@ -175,7 +184,11 @@ const Bootcamps = () => {
             <Card className="mb-3">
               <Row className="no-gutters">
                 <Col md={4}>
-                  <img src={image_4} className="card-img" alt="..." />
+                  <img
+                    src="/images/image_4.jpg"
+                    className="card-img"
+                    alt="..."
+                  />
                 </Col>
                 <Col md={8}>
                   <Card.Body>
