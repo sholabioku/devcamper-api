@@ -1,19 +1,11 @@
 import React from 'react';
-import {
-  Badge,
-  Card,
-  Col,
-  Container,
-  Form,
-  Nav,
-  Pagination,
-  Row,
-} from 'react-bootstrap';
+import { Badge, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import image_1 from '../../assets/img/image_1.jpg';
 import image_2 from '../../assets/img/image_2.jpg';
 import image_3 from '../../assets/img/image_3.jpg';
 import image_4 from '../../assets/img/image_4.jpg';
+import Pagination from '../../components/Pagination';
 import './bootcamps.css';
 
 const Bootcamps = () => {
@@ -205,26 +197,7 @@ const Bootcamps = () => {
                 </Col>
               </Row>
             </Card>
-            <Nav
-              aria-label="Page navigation example"
-              className="pagination mb-3"
-            >
-              <Nav.Item className="page-item">
-                <Nav.Link className="page-link">Previous</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className="page-item">
-                <Nav.Link className="page-link">1</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className="page-item">
-                <Nav.Link className="page-link">2</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className="page-item">
-                <Nav.Link className="page-link">3</Nav.Link>
-              </Nav.Item>
-              <Nav.Item className="page-item">
-                <Nav.Link className="page-link">Next</Nav.Link>
-              </Nav.Item>
-            </Nav>
+            <Pagination />
           </Col>
         </Row>
       </Container>
