@@ -109,7 +109,10 @@ const Bootcamps = () => {
                   <Col md={8}>
                     <Card.Body>
                       <Card.Title>
-                        <Link style={{ textDecoration: 'none' }} to="/bootcamp">
+                        <Link
+                          style={{ textDecoration: 'none' }}
+                          to={`/products/${bootcamp._id}`}
+                        >
                           {bootcamp.name}
                           <Badge bg="success" className="float-end">
                             {bootcamp.rating}
