@@ -3,6 +3,7 @@ import { Badge, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import Pagination from '../../components/Pagination';
+import data from '../../data';
 import './bootcamps.css';
 
 const Bootcamps = () => {
@@ -51,10 +52,11 @@ const Bootcamps = () => {
             <Form>
               <Form.Group>
                 <Form.Label> Rating</Form.Label>
-                <Form.Select className="custom-select mb-2">
-                  <option value="any" selected>
-                    Any
-                  </option>
+                <Form.Select
+                  aria-label="Default select example"
+                  className="custom-select mb-2"
+                >
+                  <option>Any</option>
                   <option value="9">9+</option>
                   <option value="8">8+</option>
                   <option value="7">7+</option>
@@ -69,10 +71,11 @@ const Bootcamps = () => {
               {/* Budget */}
               <Form.Group className="mb-3">
                 <Form.Label> Budget</Form.Label>
-                <Form.Select className="mb-2">
-                  <option value="any" selected>
-                    Any
-                  </option>
+                <Form.Select
+                  aria-label="Default select example"
+                  className="mb-2"
+                >
+                  <option>Any</option>
                   <option value="20000">$20,000</option>
                   <option value="15000">$15,000</option>
                   <option value="10000">$10,000</option>
@@ -93,123 +96,35 @@ const Bootcamps = () => {
           </Col>
           {/* Main Col */}
           <Col md={8}>
-            {/* Bootcamps */}
-            <Card className="mb-3">
-              <Row className="no-gutters">
-                <Col md={4}>
-                  <img
-                    src="/images/image_1.jpg"
-                    className="card-img"
-                    alt="..."
-                  />
-                </Col>
-                <Col md={8}>
-                  <Card.Body>
-                    <Card.Title>
-                      <Link style={{ textDecoration: 'none' }} to="/bootcamp">
-                        Devworks Bootcamp
-                        <Badge bg="success" className="float-end">
-                          8.8
-                        </Badge>
-                      </Link>
-                    </Card.Title>
-                    <Badge className="mb-2" bg="dark">
-                      Boston, MA
-                    </Badge>
-                    <Card.Text>
-                      Web Development, UI/UX, Mobile Development
-                    </Card.Text>
-                  </Card.Body>
-                </Col>
-              </Row>
-            </Card>
-            <Card className="mb-3">
-              <Row className="no-gutters">
-                <Col md={4}>
-                  <img
-                    src="/images/image_2.jpg"
-                    className="card-img"
-                    alt="..."
-                  />
-                </Col>
-                <Col md={8}>
-                  <Card.Body>
-                    <Card.Title>
-                      <Link style={{ textDecoration: 'none' }} to="/bootcamp">
-                        ModernTech Bootcamp
-                        <Badge bg="success" className="float-end">
-                          7.5
-                        </Badge>
-                      </Link>
-                    </Card.Title>
-                    <Badge className="mb-2" bg="dark">
-                      Boston, MA
-                    </Badge>
-                    <Card.Text>
-                      Web Development, UI/UX, Mobile Development
-                    </Card.Text>
-                  </Card.Body>
-                </Col>
-              </Row>
-            </Card>
-            <Card className="mb-3">
-              <Row className="no-gutters">
-                <Col md={4}>
-                  <img
-                    src="/images/image_3.jpg"
-                    className="card-img"
-                    alt="..."
-                  />
-                </Col>
-                <Col md={8}>
-                  <Card.Body>
-                    <Card.Title>
-                      <Link style={{ textDecoration: 'none' }} to="/bootcamp">
-                        Codemasters
-                        <Badge bg="success" className="float-end">
-                          9.2
-                        </Badge>
-                      </Link>
-                    </Card.Title>
-                    <Badge className="mb-2" bg="dark">
-                      Burlington, VT
-                    </Badge>
-                    <Card.Text>
-                      Web Development, Data Science, Marketing
-                    </Card.Text>
-                  </Card.Body>
-                </Col>
-              </Row>
-            </Card>
-            <Card className="mb-3">
-              <Row className="no-gutters">
-                <Col md={4}>
-                  <img
-                    src="/images/image_4.jpg"
-                    className="card-img"
-                    alt="..."
-                  />
-                </Col>
-                <Col md={8}>
-                  <Card.Body>
-                    <Card.Title>
-                      <Link style={{ textDecoration: 'none' }} to="/bootcamp">
-                        DevCentral Bootcamp
-                        <Badge bg="success" className="float-end">
-                          6.4
-                        </Badge>
-                      </Link>
-                    </Card.Title>
-                    <Badge className="mb-2" bg="dark">
-                      Kingston, RI
-                    </Badge>
-                    <Card.Text>
-                      Web Development, UI/UX, Mobile Development, Marketing
-                    </Card.Text>
-                  </Card.Body>
-                </Col>
-              </Row>
-            </Card>
+            {data.bootcamps.map((bootcamp) => (
+              <Card className="mb-3" key={bootcamp._id}>
+                <Row className="no-gutters">
+                  <Col md={4}>
+                    <img
+                      src={bootcamp.image}
+                      className="card-img"
+                      alt={bootcamp.name}
+                    />
+                  </Col>
+                  <Col md={8}>
+                    <Card.Body>
+                      <Card.Title>
+                        <Link style={{ textDecoration: 'none' }} to="/bootcamp">
+                          {bootcamp.name}
+                          <Badge bg="success" className="float-end">
+                            {bootcamp.rating}
+                          </Badge>
+                        </Link>
+                      </Card.Title>
+                      <Badge className="mb-2" bg="dark">
+                        {bootcamp.city}
+                      </Badge>
+                      <Card.Text>{bootcamp.careers}</Card.Text>
+                    </Card.Body>
+                  </Col>
+                </Row>
+              </Card>
+            ))}
             <Pagination />
           </Col>
         </Row>
