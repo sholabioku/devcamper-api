@@ -1,6 +1,14 @@
 import React from 'react';
-import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import {
+  Badge,
+  Button,
+  Card,
+  Col,
+  Container,
+  ListGroup,
+  Row,
+} from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
 import './bootcamp.css';
 
 const Bootcamp = () => {
@@ -76,6 +84,47 @@ const Bootcamp = () => {
               alt="..."
               className="img-thumbnail"
             />
+            <h1 className="text-center my-4">
+              <Badge bg="success" className="rounded-circle p-3">
+                8.8
+              </Badge>{' '}
+              Rating
+            </h1>
+            <Link to="/reviews" className="btn btn-block btn-dark my-3">
+              <i className="fas fa-comments" /> Read Reviews
+            </Link>
+            <Link
+              type="button"
+              to="/add-review"
+              className="btn btn-light btn-block my-3"
+            >
+              <i className="fas fa-pencil-alt" /> Write a Review
+            </Link>
+            <Link
+              to="#"
+              type="button"
+              target="_blank"
+              className="btn btn-secondary btn-block my-3"
+            >
+              <i className="fas fa-globe" /> Visit Website
+            </Link>
+
+            {/*        <div id="map" style={{ width: '100%', height: '300px' }}></div> */}
+
+            <ListGroup className="list-group-flush mt-4">
+              <ListGroup.Item>
+                <i className="fas fa-check text-success" /> Housing
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <i className="fas fa-check text-danger" /> Job Assistance
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <i className="fas fa-times text-success" /> Job Guarantee
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <i className="fas fa-check text-success" /> Accepts GI Bill
+              </ListGroup.Item>
+            </ListGroup>
           </Col>
         </Row>
       </Container>
