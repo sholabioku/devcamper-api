@@ -92,15 +92,28 @@ const Bootcamp = () => {
               Rating
             </h1>
             <div className="d-grid gap-2">
-              <Button variant="dark" onClick={() => navigate('/reviews')}>
+              <Link
+                to="/reviews"
+                type="button"
+                className="btn btn-dark btn-block"
+              >
                 <i className="fas fa-comments" /> Read Reviews
-              </Button>
-              <Button variant="light" onClick={() => navigate('/add-review')}>
+              </Link>
+              <Link
+                to="/add-review"
+                type="button"
+                className="btn btn-light btn-block"
+              >
                 <i className="fas fa-pencil-alt" /> Write a Review
-              </Button>
-              <Button variant="secondary" target="_blank">
+              </Link>
+              <Link
+                to="#"
+                type="button"
+                className="btn btn-secondary btn-block"
+                target="_blank"
+              >
                 <i className="fas fa-globe" /> Visit Website
-              </Button>
+              </Link>
             </div>
 
             {/*        <div id="map" style={{ width: '100%', height: '300px' }}></div> */}
