@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Header';
+import Bootcamp from './pages/bootcamp/Bootcamp';
 import Bootcamps from './pages/bootcamps/Bootcamps';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/bootcamps" element={<Bootcamps />} />
+          <Route path="/bootcamps/:id" element={<Bootcamp />} />
         </Routes>
       </div>
     </Router>
