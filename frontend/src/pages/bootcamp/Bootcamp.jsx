@@ -8,10 +8,11 @@ import {
   ListGroup,
   Row,
 } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './bootcamp.css';
 
 const Bootcamp = () => {
+  const navigate = useNavigate();
   const params = useParams();
   const { id: bootcampId } = params;
   return (
@@ -90,24 +91,17 @@ const Bootcamp = () => {
               </Badge>{' '}
               Rating
             </h1>
-            <Link to="/reviews" className="btn btn-block btn-dark my-3">
-              <i className="fas fa-comments" /> Read Reviews
-            </Link>
-            <Link
-              type="button"
-              to="/add-review"
-              className="btn btn-light btn-block my-3"
-            >
-              <i className="fas fa-pencil-alt" /> Write a Review
-            </Link>
-            <Link
-              to="#"
-              type="button"
-              target="_blank"
-              className="btn btn-secondary btn-block my-3"
-            >
-              <i className="fas fa-globe" /> Visit Website
-            </Link>
+            <div className="d-grid gap-2">
+              <Button variant="dark" onClick={() => navigate('/reviews')}>
+                <i className="fas fa-comments" /> Read Reviews
+              </Button>
+              <Button variant="light" onClick={() => navigate('/add-review')}>
+                <i className="fas fa-pencil-alt" /> Write a Review
+              </Button>
+              <Button variant="secondary" target="_blank">
+                <i className="fas fa-globe" /> Visit Website
+              </Button>
+            </div>
 
             {/*        <div id="map" style={{ width: '100%', height: '300px' }}></div> */}
 
