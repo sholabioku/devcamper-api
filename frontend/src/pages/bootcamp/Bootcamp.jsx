@@ -116,7 +116,7 @@ const Bootcamp = () => {
               </Link>
             </div>
 
-            {/*        <div id="map" style={{ width: '100%', height: '300px' }}></div> */}
+            <div id="map" style={{ width: '100%', height: '300px' }}></div>
 
             <ListGroup className="list-group-flush mt-4">
               <ListGroup.Item>
