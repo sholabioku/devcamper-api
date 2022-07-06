@@ -128,9 +128,7 @@ const Bootcamp = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               <Marker position={[51.505, -0.09]}>
-                <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
+                <Popup></Popup>
               </Marker>
             </MapContainer>
 
