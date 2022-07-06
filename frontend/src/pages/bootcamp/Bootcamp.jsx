@@ -69,6 +69,14 @@ const Bootcamp = () => {
               </Card.Body>
             </Card>
           </Col>
+          {/* Sidebar */}
+          <Col md={4}>
+            <img
+              src="/images/image_1.jpg"
+              alt="..."
+              className="img-thumbnail"
+            />
+          </Col>
         </Row>
       </Container>
     </div>
