@@ -12,6 +12,7 @@ const AddReview = () => {
             <Card className="bg-white py-2 px-4">
               <Card.Body>
                 <Link
+                  style={{ textDecoration: 'none' }}
                   to="/bootcamps/bootcampId"
                   className="btn btn-link text-secondary my-3"
                 >
