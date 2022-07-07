@@ -5,6 +5,7 @@ import Bootcamps from './pages/bootcamps/Bootcamps';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import Reviews from './pages/reviews/Reviews';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/bootcamps" element={<Bootcamps />} />
           <Route path="/bootcamps/:id" element={<Bootcamp />} />
+          <Route path="/bootcamps/:id/reviews" element={<Reviews />} />
         </Routes>
       </div>
     </Router>

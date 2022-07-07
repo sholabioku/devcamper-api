@@ -1,19 +1,10 @@
 import React from 'react';
-import {
-  Badge,
-  Button,
-  Card,
-  Col,
-  Container,
-  ListGroup,
-  Row,
-} from 'react-bootstrap';
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Badge, Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Link, useParams } from 'react-router-dom';
 import './bootcamp.css';
 
 const Bootcamp = () => {
-  const navigate = useNavigate();
   const params = useParams();
   const { id: bootcampId } = params;
   return (
@@ -94,7 +85,7 @@ const Bootcamp = () => {
             </h1>
             <div className="d-grid gap-2">
               <Link
-                to="/reviews"
+                to={`/bootcamps/${bootcampId}/reviews`}
                 type="button"
                 className="btn btn-dark btn-block"
               >
