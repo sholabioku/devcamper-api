@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Badge, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './reviews.css';
 
@@ -54,6 +54,23 @@ const Reviews = () => {
                 <p className="text-muted">Writtern By Jill Samson</p>
               </Card.Body>
             </Card>
+          </Col>
+          <Col>
+            <h1 className="text-center my-4">
+              <Badge bg="success" className="rounded-circle p-3">
+                8.8
+              </Badge>{' '}
+              Rating
+            </h1>
+            <div className="d-grid gap-2">
+              <Link
+                to="/bootcamps/bootcampId/add-review"
+                className="btn btn-primary btn-block my-3"
+              >
+                <i className="fas fa-pencil-alt" />
+                Review This Bootcamp
+              </Link>
+            </div>
           </Col>
         </Row>
       </Container>
