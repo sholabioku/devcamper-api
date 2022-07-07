@@ -92,7 +92,7 @@ const Bootcamp = () => {
                 <i className="fas fa-comments" /> Read Reviews
               </Link>
               <Link
-                to="/add-review"
+                to={`/bootcamps/${bootcampId}/add-review`}
                 type="button"
                 className="btn btn-light btn-block"
               >

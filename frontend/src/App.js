@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Header';
+import AddReview from './pages/addReview/AddReview';
 import Bootcamp from './pages/bootcamp/Bootcamp';
 import Bootcamps from './pages/bootcamps/Bootcamps';
 import Home from './pages/home/Home';
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/bootcamps" element={<Bootcamps />} />
           <Route path="/bootcamps/:id" element={<Bootcamp />} />
           <Route path="/bootcamps/:id/reviews" element={<Reviews />} />
+          <Route path="/bootcamps/:id/add-review" element={<AddReview />} />
         </Routes>
       </div>
     </Router>
