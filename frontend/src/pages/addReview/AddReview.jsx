@@ -5,7 +5,7 @@ import './addReview.css';
 
 const AddReview = () => {
   return (
-    <div className="addReview-show">
+    <div className="addreview-show">
       <Container>
         <Row>
           <Col md={8} className="m-auto">
