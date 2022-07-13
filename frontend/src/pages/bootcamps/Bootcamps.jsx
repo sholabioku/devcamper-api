@@ -2,6 +2,7 @@ import React, { useEffect, useReducer, useState } from 'react';
 import { Badge, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import logger from 'use-reducer-logger';
 
 import Pagination from '../../components/Pagination';
 // import data from '../../data';
@@ -33,11 +34,14 @@ const reducer = (state, action) => {
 
 const Bootcamps = () => {
   // const [bootcamps, setBootcamps] = useState([]);
-  const [{ loading, error, bootcamps }, dispatch] = useReducer(reducer, {
-    bootcamps: [],
-    loading: true,
-    error: null,
-  });
+  const [{ loading, error, bootcamps }, dispatch] = useReducer(
+    logger(reducer),
+    {
+      bootcamps: [],
+      loading: true,
+      error: null,
+    }
+  );
 
   useEffect(() => {
     const fetchData = async () => {
