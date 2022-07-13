@@ -7,6 +7,7 @@ import logger from 'use-reducer-logger';
 import Pagination from '../../components/Pagination';
 // import data from '../../data';
 import './bootcamps.css';
+import LoadingBox from '../../components/LoadingBox';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -146,7 +147,7 @@ const Bootcamps = () => {
           {/* Main Col */}
           <Col md={8}>
             {loading ? (
-              <div>Loading...</div>
+              <LoadingBox />
             ) : error ? (
               <div>{error}</div>
             ) : (
