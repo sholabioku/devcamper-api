@@ -165,7 +165,7 @@ const Bootcamps = () => {
                         </Link>
                       </Card.Title>
                       <Badge className="mb-2" bg="dark">
-                        {bootcamp.location.city}
+                        {bootcamp.location.city}, {bootcamp.location.state}
                       </Badge>
                       <Card.Text>{bootcamp.careers}</Card.Text>
                     </Card.Body>
