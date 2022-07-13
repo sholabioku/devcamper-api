@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Badge, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import Pagination from '../../components/Pagination';
-import data from '../../data';
+// import data from '../../data';
 import './bootcamps.css';
 
 const Bootcamps = () => {
+  const [bootcamps, setBootcamps] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get('/api/v1/bootcamps');
+      setBootcamps(result.data.data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="bootcamps-show">
       <Container>
@@ -96,7 +107,7 @@ const Bootcamps = () => {
           </Col>
           {/* Main Col */}
           <Col md={8}>
-            {data.bootcamps.map((bootcamp) => (
+            {bootcamps.map((bootcamp) => (
               <Card className="mb-3" key={bootcamp._id}>
                 <Row className="no-gutters">
                   <Col md={4}>
@@ -115,12 +126,12 @@ const Bootcamps = () => {
                         >
                           {bootcamp.name}
                           <Badge bg="success" className="float-end">
-                            {bootcamp.rating}
+                            {bootcamp.averageRating}
                           </Badge>
                         </Link>
                       </Card.Title>
                       <Badge className="mb-2" bg="dark">
-                        {bootcamp.city}
+                        {bootcamp.location.city}
                       </Badge>
                       <Card.Text>{bootcamp.careers}</Card.Text>
                     </Card.Body>
