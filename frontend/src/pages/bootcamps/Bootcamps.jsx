@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { Badge, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -7,13 +7,47 @@ import Pagination from '../../components/Pagination';
 // import data from '../../data';
 import './bootcamps.css';
 
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'FECTCH_REQUEST':
+      return {
+        ...state,
+        loading: true,
+      };
+    case 'FECTCH_SUCCESS':
+      return {
+        ...state,
+        loading: false,
+        bootcamps: action.payload,
+      };
+    case 'FECTCH_FAILURE':
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
 const Bootcamps = () => {
-  const [bootcamps, setBootcamps] = useState([]);
+  // const [bootcamps, setBootcamps] = useState([]);
+  const [{ loading, error, bootcamps }, dispatch] = useReducer(reducer, {
+    bootcamps: [],
+    loading: true,
+    error: null,
+  });
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('/api/v1/bootcamps');
-      setBootcamps(result.data.data);
+      dispatch({ type: 'FECTCH_REQUEST' });
+      try {
+        const result = await axios.get('/api/v1/bootcamps');
+        dispatch({ type: 'FECTCH_SUCCESS', payload: result.data.data });
+      } catch (error) {
+        dispatch({ type: 'FECTCH_FAILURE', payload: error.message });
+      }
     };
     fetchData();
   }, []);
