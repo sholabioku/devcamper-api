@@ -8,6 +8,7 @@ import Pagination from '../../components/Pagination';
 // import data from '../../data';
 import './bootcamps.css';
 import LoadingBox from '../../components/LoadingBox';
+import MessageBox from '../../components/MessageBox';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -149,7 +150,7 @@ const Bootcamps = () => {
             {loading ? (
               <LoadingBox />
             ) : error ? (
-              <div>{error}</div>
+              <MessageBox variant="danger">{error}</MessageBox>
             ) : (
               bootcamps.map((bootcamp) => (
                 <Card className="mb-3" key={bootcamp._id}>
