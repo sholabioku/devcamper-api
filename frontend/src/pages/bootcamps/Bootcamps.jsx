@@ -9,6 +9,7 @@ import Pagination from '../../components/Pagination';
 import './bootcamps.css';
 import LoadingBox from '../../components/LoadingBox';
 import MessageBox from '../../components/MessageBox';
+import { getError } from '../../utils';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -52,7 +53,7 @@ const Bootcamps = () => {
         const result = await axios.get('/api/v1/bootcamps');
         dispatch({ type: 'FECTCH_SUCCESS', payload: result.data.data });
       } catch (error) {
-        dispatch({ type: 'FECTCH_FAILURE', payload: error.message });
+        dispatch({ type: 'FECTCH_FAILURE', payload: getError(error) });
       }
     };
     fetchData();
