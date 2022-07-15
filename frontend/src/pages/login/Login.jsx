@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './login.css';
+import { Store } from '../../Store';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const Login = () => {
   });
 
   const { email, password } = formData;
+
+  const { state, dispatch: ctxDispatch } = useContext(Store);
 
   const handleChange = (e) => {
     setFormData((prevState) => ({
@@ -27,6 +30,7 @@ const Login = () => {
         email,
         password,
       });
+      ctxDispatch({ type: 'USER_LOGIN', payload: data });
       console.log(data);
     } catch (error) {}
   };
