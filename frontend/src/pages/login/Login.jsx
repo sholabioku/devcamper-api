@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import './login.css';
 import { Store } from '../../Store';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -42,6 +43,9 @@ const Login = () => {
   return (
     <div className="login-show">
       <Container>
+        <Helmet>
+          <title>Login</title>
+        </Helmet>
         <Row>
           <Col md={6} className="m-auto">
             <Card className="p-4 mb-4">
