@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import './login.css';
 import { Store } from '../../Store';
@@ -9,6 +9,10 @@ import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
   const navigate = useNavigate();
+  const { search } = useLocation();
+  const redirectInUrl = new URLSearchParams(search).get('redirect');
+  const redirect = redirectInUrl ? redirectInUrl : '/';
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -34,7 +38,7 @@ const Login = () => {
       });
       ctxDispatch({ type: 'USER_LOGIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
-      navigate('/');
+      navigate(redirect || '/');
     } catch (error) {
       alert('Invalid email or password');
     }
@@ -90,7 +94,10 @@ const Login = () => {
                 </p>
                 <p className="mb-3">
                   New Customer?{' '}
-                  <Link style={{ textDecoration: 'none' }} to={`/register`}>
+                  <Link
+                    style={{ textDecoration: 'none' }}
+                    to={`/register?redirect=${redirect}`}
+                  >
                     Create your account
                   </Link>
                 </p>
