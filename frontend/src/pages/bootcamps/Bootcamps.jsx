@@ -58,8 +58,10 @@ const Bootcamps = () => {
     const fetchData = async () => {
       dispatch({ type: 'FECTCH_REQUEST' });
       try {
-        const result = await axios.get('/api/v1/bootcamps');
-        dispatch({ type: 'FECTCH_SUCCESS', payload: result.data.data });
+        const {
+          data: { data },
+        } = await axios.get('/api/v1/bootcamps');
+        dispatch({ type: 'FECTCH_SUCCESS', payload: data });
       } catch (error) {
         dispatch({ type: 'FECTCH_FAILURE', payload: getError(error) });
       }
