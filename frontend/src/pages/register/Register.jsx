@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Form, Pagination, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './register.css';
 
@@ -78,13 +78,9 @@ const Register = () => {
                     * You must be affiliated with the bootcamp in some way in
                     order to add it to DevCamper.
                   </p>
-                  <Form.Group className="mb-3">
-                    <Form.Control
-                      type="submit"
-                      value="Register"
-                      className="btn btn-primary btn-block"
-                    />
-                  </Form.Group>
+                  <div className="d-grid gap-2 mb-3">
+                    <Button type="submit">Register</Button>
+                  </div>
                 </Form>
                 <p className="mb-3">
                   Already have an account?{' '}

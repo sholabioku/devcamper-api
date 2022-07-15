@@ -1,5 +1,13 @@
 import React, { useEffect, useReducer, useState } from 'react';
-import { Badge, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import {
+  Badge,
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  Row,
+} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import logger from 'use-reducer-logger';
@@ -89,13 +97,9 @@ const Bootcamps = () => {
                       </Form.Group>
                     </Col>
                   </Row>
-                  <Form.Group className="mt-3">
-                    <Form.Control
-                      type="submit"
-                      value="Find Bootcamps"
-                      className="btn btn-primary btn-block"
-                    />
-                  </Form.Group>
+                  <div className="d-grid gap-2 mt-3">
+                    <Button type="submit">Find Bootcamps</Button>
+                  </div>
                 </Form>
               </Card.Body>
             </Card>
@@ -137,13 +141,9 @@ const Bootcamps = () => {
                   <option value="2000">$2,000</option>
                 </Form.Select>
               </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Control
-                  type="submit"
-                  value="Find Bootcamps"
-                  className="btn btn-primary btn-block"
-                />
-              </Form.Group>
+              <div className="d-grid gap-2 mb-3">
+                <Button type="submit">Find Bootcamps</Button>
+              </div>
             </Form>
           </Col>
           {/* Main Col */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './login.css';
@@ -38,13 +38,9 @@ const Login = () => {
                       required
                     />
                   </Form.Group>
-                  <Form.Group className="mb-3">
-                    <Form.Control
-                      type="submit"
-                      value="Login"
-                      className="btn btn-primary btn-block"
-                    />
-                  </Form.Group>
+                  <div className="d-grid gap-2 mb-3">
+                    <Button type="submit">Login</Button>
+                  </div>
                 </Form>
                 <p>
                   Forgot Password?{' '}
