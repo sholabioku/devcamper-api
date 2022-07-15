@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import './login.css';
 import { Store } from '../../Store';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -31,8 +32,11 @@ const Login = () => {
         password,
       });
       ctxDispatch({ type: 'USER_LOGIN', payload: data });
-      console.log(data);
-    } catch (error) {}
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      navigate('/');
+    } catch (error) {
+      alert('Invalid email or password');
+    }
   };
 
   return (
