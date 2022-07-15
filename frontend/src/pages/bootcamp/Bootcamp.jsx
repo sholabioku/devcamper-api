@@ -1,5 +1,6 @@
 import React from 'react';
 import { Badge, Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Link, useParams } from 'react-router-dom';
 import './bootcamp.css';
@@ -10,6 +11,9 @@ const Bootcamp = () => {
   return (
     <div className="bootcamp-show">
       <Container>
+        <Helmet>
+          <title>Bootcamp</title>
+        </Helmet>
         <Row>
           {/* Main Col */}
           <Col md={8}>

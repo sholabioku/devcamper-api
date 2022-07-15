@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import './register.css';
 
@@ -7,6 +8,9 @@ const Register = () => {
   return (
     <div className="register-show">
       <Container>
+        <Helmet>
+          <title>Register</title>
+        </Helmet>
         <Row>
           <Col md={6} className="m-auto">
             <Card className="p-4 mb-4">
