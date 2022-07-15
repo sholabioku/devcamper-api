@@ -6,8 +6,19 @@ import { Link } from 'react-router-dom';
 import './login.css';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const { email, password } = formData;
+
+  const handleChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +53,7 @@ const Login = () => {
                       name="email"
                       placeholder="Enter email"
                       required
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={handleChange}
                     />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="password">
@@ -52,7 +63,7 @@ const Login = () => {
                       name="password"
                       placeholder="Enter password"
                       required
-                      onChange={(e) => setPassword(e.target.value)}
+                      onChange={handleChange}
                     />
                   </Form.Group>
                   <div className="d-grid gap-2 mb-3">
