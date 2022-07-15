@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './login.css';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post('/api/v1/auth/login', {
+        email,
+        password,
+      });
+      console.log(data);
+    } catch (error) {}
+  };
+
   return (
     <div className="login-show">
       <Container>
@@ -19,7 +34,7 @@ const Login = () => {
                   Log in to list your bootcamp or rate, review and favorite
                   bootcamps
                 </p>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email Address</Form.Label>
                     <Form.Control
@@ -27,6 +42,7 @@ const Login = () => {
                       name="email"
                       placeholder="Enter email"
                       required
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="password">
@@ -36,6 +52,7 @@ const Login = () => {
                       name="password"
                       placeholder="Enter password"
                       required
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </Form.Group>
                   <div className="d-grid gap-2 mb-3">
