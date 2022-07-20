@@ -47,7 +47,7 @@ const apiLimiter = rateLimit({
   max: 100,
 });
 
-app.use(apiLimiter);
+// app.use(apiLimiter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

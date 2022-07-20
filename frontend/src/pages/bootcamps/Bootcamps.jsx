@@ -164,7 +164,7 @@ const Bootcamps = () => {
                   <Row className="no-gutters">
                     <Col md={4}>
                       <img
-                        src={bootcamp.image}
+                        src={bootcamp.photo}
                         className="card-img"
                         alt={bootcamp.name}
                       />
@@ -183,9 +183,13 @@ const Bootcamps = () => {
                           </Link>
                         </Card.Title>
                         <Badge className="mb-2" bg="dark">
-                          {bootcamp.location.city}, {bootcamp.location.state}
+                          {bootcamp.location.formattedAddress}
                         </Badge>
-                        <Card.Text>{bootcamp.careers}</Card.Text>
+                        <Card.Text>
+                          {bootcamp.careers.map((career, ind) => (
+                            <span key={ind}>{`${career}, `}</span>
+                          ))}
+                        </Card.Text>
                       </Card.Body>
                     </Col>
                   </Row>
