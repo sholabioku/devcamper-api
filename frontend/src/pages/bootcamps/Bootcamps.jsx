@@ -19,6 +19,7 @@ import LoadingBox from '../../components/LoadingBox';
 import MessageBox from '../../components/MessageBox';
 import { getError } from '../../utils';
 import { Helmet } from 'react-helmet-async';
+import BootcampItem from '../../components/BootcampItem';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -160,40 +161,7 @@ const Bootcamps = () => {
               <MessageBox variant="danger">{error}</MessageBox>
             ) : (
               bootcamps.map((bootcamp) => (
-                <Card className="mb-3" key={bootcamp._id}>
-                  <Row className="no-gutters">
-                    <Col md={4}>
-                      <img
-                        src={bootcamp.photo}
-                        className="card-img"
-                        alt={bootcamp.name}
-                      />
-                    </Col>
-                    <Col md={8}>
-                      <Card.Body>
-                        <Card.Title>
-                          <Link
-                            style={{ textDecoration: 'none' }}
-                            to={`/bootcamps/${bootcamp._id}`}
-                          >
-                            {bootcamp.name}
-                            <Badge bg="success" className="float-end">
-                              {bootcamp.averageRating}
-                            </Badge>
-                          </Link>
-                        </Card.Title>
-                        <Badge className="mb-2" bg="dark">
-                          {bootcamp.location.formattedAddress}
-                        </Badge>
-                        <Card.Text>
-                          {bootcamp.careers.map((career, ind) => (
-                            <span key={ind}>{`${career}, `}</span>
-                          ))}
-                        </Card.Text>
-                      </Card.Body>
-                    </Col>
-                  </Row>
-                </Card>
+                <BootcampItem key={bootcamp._id} bootcamp={bootcamp} />
               ))
             )}
             <Pagination />
